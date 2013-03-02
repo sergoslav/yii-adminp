@@ -34,3 +34,11 @@
 /*@import url('grappelli-skin-default.css');*/
 
 @import url('bootstrap/navbar.css');
+
+div#content {
+    min-height:450px;
+}
+
+div#flash_messages {
+    display: none;
+}

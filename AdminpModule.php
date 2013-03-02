@@ -14,6 +14,7 @@ class AdminpModule extends CWebModule
 {
 
     private $_assetsUrl;
+    public $title = '';
 
     public function init()
     {

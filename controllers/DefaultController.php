@@ -2,19 +2,47 @@
 
 class DefaultController extends AdminController
 {
+    protected $_viewPath = '';
+    protected $_viewAttributes = array();
+
 
     /**
      * Lists all models.
      */
     public function actionIndex()
     {
+        Yii::log(__METHOD__);
+        $this->_renderLayout();
+    }
+
+    public function getAdminPanelTitle() {
+        return AdminpModule::t($this->module->title);
+    }
+
+
+    protected function _renderLayout() {
         $this->render(
-            'index',
+            '../dashboard/index',
             array(
-                 'title'  => AdminpModule::t('Administrators Panel'),
-                 'models' => $this->module->modelsList,
+                'test'  => 'pppppppp',
             )
         );
+    }
+
+    public function setView() {
+
+    }
+
+    public function getView() {
+        return $this->_viewPath;
+    }
+
+    public function setViewAttributes() {
+
+    }
+
+    public function getViewAttributes() {
+        return $this->_viewAttributes;
     }
 
 //    public function actionError()
